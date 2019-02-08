@@ -1,5 +1,5 @@
 ---
- - hosts: kham.sample.com
+ - hosts: all
    user: kham
    vars:
     motd_well: 'Welcome'
