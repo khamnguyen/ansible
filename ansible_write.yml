@@ -1,5 +1,5 @@
 ---
- - hosts: all
+ - hosts: kham-testsvr
    user: kham
    vars:
     motd_well: 'Welcome'
