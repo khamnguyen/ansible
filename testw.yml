@@ -1,8 +1,8 @@
 ---
- - hosts: kham-testsvr
+ - hosts: testsvr
    user: kham
    vars:
-    motd_well: 'Welcome'
+    motd_well: 'Weeeeelcome'
    tasks:
    - name: sample name
      copy:
