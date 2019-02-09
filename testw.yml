@@ -1,0 +1,10 @@
+---
+ - hosts: kham-testsvr
+   user: kham
+   vars:
+    motd_well: 'Welcome'
+   tasks:
+   - name: sample name
+     copy:
+     dest: /home/kham/testfile
+     content: "{{ motd_well }}"
