@@ -1,5 +1,5 @@
 ---
- - hosts: kham-testsvr
+ - hosts: localhost
    user: kham
    vars:
     motd_well: 'Welcome'
