@@ -1,0 +1,13 @@
+# Install Mongo
+---
+# target hosts
+- hosts: testmachine
+  become: yes
+  tasks:
+    - name: Install mongo
+      apt:
+        name=mongodb
+        state=latest
+        update_cache=yes
+
+
