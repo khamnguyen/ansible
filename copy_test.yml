@@ -1,0 +1,13 @@
+---
+ - hosts: kham.com
+   user: kham
+   vars:
+    motd_wel: 'Welcome nooboooo'
+   tasks:
+   - name: sample name
+     copy:
+      dest: /home/kham/testfile
+      content: "{{ motd_wel }}"
+
+
+
