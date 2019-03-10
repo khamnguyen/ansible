@@ -4,7 +4,7 @@
 - hosts: testmachine
   become: yes
   tasks:
-    - name: Install mongo
+    - name: Install mongo now!!
       apt:
         name=mongodb
         state=latest
