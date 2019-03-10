@@ -2,7 +2,7 @@
  - hosts: localhost
    user: kham
    vars:
-    motd_well: 'Welcome'
+    motd_well: 'Welcome name'
    tasks:
    - name: sample name
      copy:
