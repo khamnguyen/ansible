@@ -2,7 +2,7 @@
  - hosts: kham.com
    user: kham
    vars:
-    motd_wel: 'Welcome noobooody'
+    motd_wel: 'Welcome noobooody!!!!!'
    tasks:
    - name: sample name
      copy:
