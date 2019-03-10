@@ -2,7 +2,7 @@
  - hosts: testsvr
    user: kham
    vars:
-    motd_well: 'Weeeeelcome'
+    motd_well: 'Weeeeelcome home'
    tasks:
    - name: sample name
      copy:
