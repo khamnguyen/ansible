@@ -1,6 +1,6 @@
 # Install Mongo
 ---
-# target hosts
+# target hosts updated
 - hosts: testmachine
   become: yes
   tasks:
