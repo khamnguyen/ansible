@@ -1,0 +1,27 @@
+---
+- name: removing mongo database on test machine
+  hosts: testmachine
+  become: yes  
+  vars:
+    packages:
+      - mongodb
+    artifact_path:
+      - /var/log
+      - /var/lib
+  tasks:
+  - name: stopping mongod services
+    service:
+      name: mongodb
+      state: stopped
+   
+  - name: removing {{ packages }}
+    apt: 
+      name: mongodb
+      state: absent
+  - name: clean-remove mongo files
+    file:
+      state: absent
+      path: "{{ artifact_path }}/mongodb"
+ 
+      
+   

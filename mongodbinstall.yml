@@ -9,5 +9,12 @@
         name=mongodb
         state=latest
         update_cache=yes
+    - name: Start Mongo sevice
+      service:
+        name=mongodb
+        state=started
+
+
+
 
 
