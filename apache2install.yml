@@ -1,0 +1,46 @@
+---
+# Inventory section
+- hosts: testmachine
+  name: Installing apache-basic
+#  become: yes
+# Vars section
+  vars:
+    web_install:
+      - apache2
+      - apache2-utils
+      - ssl-cert
+      - libapache2-mod-wsgi
+    apache_test_message:  This is a test message
+    apache_max_keep_alive: 115
+# Tasks section
+  tasks:
+    - name: Install web packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ web_install }}"
+      notify:
+        - restart apache2 service
+    - name: Create site-enabled directory
+      file:
+        name: /etc/apache2/sites-enabled
+        state: directory
+    - name: copy updated index.html to new apache server
+      template:
+        src: /home/kham/317lab/ansible/templates/index.html.j2
+        dest: /var/www/html/index.html
+    - name: copy ports.conf and  change 80 to 8080
+      template:
+        src: /home/kham/317lab/ansible/templates/ports.conf
+        dest: /etc/apache2/ports.conf
+      notify: restart apache2 service
+
+
+# Handlers section
+  handlers:
+    - name: restart apache2 service
+      service:
+        name: apache2
+        state: restarted
+        enabled: yes
+

@@ -1,5 +1,5 @@
 ---
- - hosts: localhost
+ - hosts: testmachine
    user: kham
    vars:
     motd_well: 'Welcome name'

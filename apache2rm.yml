@@ -1,7 +1,7 @@
 # Removing Apache2 from any machine in host file
 ---
 - hosts: testmachine
-  become: yes
+#  become: yes
   vars:
    packages:
    - apache2
